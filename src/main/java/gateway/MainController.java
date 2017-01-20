@@ -3,6 +3,7 @@ package rasgateway;
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 
 
+@RefreshScope
 @RestController
 public class MainController {
 
@@ -20,6 +22,14 @@ public class MainController {
     @RequestMapping("/")
     public String index() {
         return "Greetings from Spring Boot!";
+    }
+
+    @Value("${message:Hello default}")
+    private String message;
+
+    @RequestMapping("/message")
+    String getMessage() {
+        return this.message;
     }
 
     /*  write some code here to access the microservice,
