@@ -6,7 +6,7 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 
 
-//@EnableZuulProxy
+@EnableZuulProxy
 @SpringBootApplication
 public class Application {
 
