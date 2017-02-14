@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @EnableZuulProxy
-@EnableOAuth2Sso
+//@EnableOAuth2Sso
 @SpringBootApplication
 public class Application {
 
